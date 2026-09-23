@@ -1,0 +1,197 @@
+table despesas_bi
+	lineageTag: 70e08d92-b005-429a-b23d-5d902c672576
+
+	measure 'Total Pago' = SUM('despesas_bi'[valor_pago])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Total Empenhado' = SUM('despesas_bi'[valor_empenhado])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Total Liquidado' = SUM('despesas_bi'[valor_liquidado])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Restos a Pagar Pagos' = SUM('despesas_bi'[valor_restos_pagos])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Quantidade de Registros' = COUNTROWS('despesas_bi')
+		formatString: #,0
+
+	column id_registro
+		dataType: string
+		lineageTag: 54250ad5-19ab-4167-9c35-5d1418b8f842
+		summarizeBy: none
+		sourceColumn: id_registro
+
+		annotation SummarizationSetBy = Automatic
+
+	column periodo
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c3d8ee12-44dd-4f4a-8b16-8282d3a0cba8
+		summarizeBy: none
+		sourceColumn: periodo
+
+		variation Variation
+			isDefault
+			relationship: b31176e0-00cd-467e-93bc-362da9ea3b6e
+			defaultHierarchy: LocalDateTable_08100f4b-8856-4038-ab2b-179a495e058a.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column codigo_orgao_superior
+		dataType: string
+		lineageTag: 61bfa31e-2511-4b13-b812-9f2c439e9042
+		summarizeBy: none
+		sourceColumn: codigo_orgao_superior
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_orgao_superior
+		dataType: string
+		lineageTag: 0a7a46ee-4a46-4105-835c-d4aff737a618
+		summarizeBy: none
+		sourceColumn: nome_orgao_superior
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_funcao
+		dataType: string
+		lineageTag: 4db5a5c3-08c9-46d8-9b49-299154266c30
+		summarizeBy: none
+		sourceColumn: codigo_funcao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_funcao
+		dataType: string
+		lineageTag: a8235edc-787b-445e-804a-a007c3a99e90
+		summarizeBy: none
+		sourceColumn: nome_funcao
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_programa
+		dataType: string
+		lineageTag: f589bc8e-fad1-4740-b583-3e13a5345483
+		summarizeBy: none
+		sourceColumn: codigo_programa
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_programa
+		dataType: string
+		lineageTag: e3e830e8-6da4-45e4-8489-52aa633d1a59
+		summarizeBy: none
+		sourceColumn: nome_programa
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_acao
+		dataType: string
+		lineageTag: ff5f3a30-1540-4e45-b601-6cc4d606cc71
+		summarizeBy: none
+		sourceColumn: codigo_acao
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_acao
+		dataType: string
+		lineageTag: 97c92572-083a-493b-ac4f-1fce5803883d
+		summarizeBy: none
+		sourceColumn: nome_acao
+
+		annotation SummarizationSetBy = Automatic
+
+	column codigo_grupo_despesa
+		dataType: string
+		lineageTag: acc80fdf-d9a5-42e2-8c4a-dcefb075d815
+		summarizeBy: none
+		sourceColumn: codigo_grupo_despesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column nome_grupo_despesa
+		dataType: string
+		lineageTag: 23982519-c119-4dd8-a83d-661d2deb76a0
+		summarizeBy: none
+		sourceColumn: nome_grupo_despesa
+
+		annotation SummarizationSetBy = Automatic
+
+	column valor_empenhado
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 79e00d9e-8180-410f-ba8e-9517170a945e
+		summarizeBy: sum
+		sourceColumn: valor_empenhado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column valor_liquidado
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 29ffc65e-72cf-4153-a662-bc4ec2a00e85
+		summarizeBy: sum
+		sourceColumn: valor_liquidado
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column valor_pago
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 64bc7563-82fc-4e3b-9a86-28d97d1c3002
+		summarizeBy: sum
+		sourceColumn: valor_pago
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column valor_restos_pagos
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: a71ca4c3-f64b-4ff4-995d-80c26b234031
+		summarizeBy: sum
+		sourceColumn: valor_restos_pagos
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column classificacao_programa_divida
+		dataType: string
+		lineageTag: b824464d-d303-4930-82e4-8ac700ffb750
+		summarizeBy: none
+		sourceColumn: classificacao_programa_divida
+
+		annotation SummarizationSetBy = Automatic
+
+	partition despesas_bi = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\CONFIGURAR_CAMINHO\brasil-em-dados\data\processed\despesas_bi.csv"),[Delimiter=";", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Alterar Tipo" = Table.TransformColumnTypes(Fonte,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}, {"Column13", type text}, {"Column14", type text}, {"Column15", type text}, {"Column16", type text}, {"Column17", type text}}),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(#"Alterar Tipo", [PromoteAllScalars=true]),
+				    #"Tipo Alterado com Localidade" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos", {{"periodo", type date}}, "pt-BR"),
+				    #"Tipo Alterado com Localidade1" = Table.TransformColumnTypes(#"Tipo Alterado com Localidade", {{"valor_liquidado", Currency.Type}, {"valor_pago", Currency.Type}, {"valor_restos_pagos", Currency.Type}, {"valor_empenhado", Currency.Type}}, "en-US")
+				in
+				    #"Tipo Alterado com Localidade1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table

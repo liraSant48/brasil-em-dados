@@ -1,0 +1,20 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["despesas_bi"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table despesas_bi
+ref table DateTableTemplate_a5463c98-9918-4307-9093-d1282e6e1a94
+ref table LocalDateTable_08100f4b-8856-4038-ab2b-179a495e058a
+
+ref cultureInfo pt-BR

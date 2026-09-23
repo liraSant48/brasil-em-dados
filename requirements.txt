@@ -1,0 +1,15 @@
+# Extração HTTP
+requests
+
+# Tratamento tabular e arquivos Parquet
+pandas
+pyarrow
+
+# Consultas SQL e banco analítico local
+duckdb
+
+# Configuração local por variáveis de ambiente
+python-dotenv
+
+# Testes futuros
+pytest

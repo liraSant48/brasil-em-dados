@@ -1,0 +1,101 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Cache e artefatos Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+.envrc
+credentials.json
+credentials*.json
+secrets.json
+secrets*.json
+secrets.toml
+secrets*.yaml
+secrets*.yml
+credentials/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Bancos locais e arquivos auxiliares
+*.duckdb
+*.duckdb.*
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.wal
+
+# Dados locais: manter apenas os marcadores das pastas
+data/**
+!data/raw/
+!data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Formatos de dados e arquivos compactados potencialmente grandes
+*.csv
+*.tsv
+*.parquet
+*.arrow
+*.feather
+*.jsonl
+*.ndjson
+*.xlsx
+*.xls
+*.zip
+*.gz
+*.7z
+*.rar
+*.tar
+
+# Arquivos binários e cache local do Power BI
+*.pbix
+*.pbit
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/.pbi/diagnostics/
+**/.pbi/AutoRecovery/
+
+# Backups e artefatos locais (não excluir definições PBIP/PBIR/TMDL)
+backups/
+backup/
+.local/
+*.bak
+*.backup
+.vscode/settings.json
+tokens.json
+*.token
+client_secret*.json
+service-account*.json
+
+# Arquivos temporários do sistema e editores
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+~$*
+**/.pbi/
