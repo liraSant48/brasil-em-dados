@@ -4,6 +4,12 @@ Análise exploratória da execução da despesa federal com dados abertos do Por
 
 O recorte inicial é **janeiro de 2026**. Os rankings abrangem os órgãos presentes no arquivo carregado, sem restrição ao Ministério da Fazenda. A integridade interna **não comprova, isoladamente, a completude de toda a execução federal**.
 
+## Dashboard
+
+![Dashboard Brasil em Dados — Visão Geral em tema escuro, janeiro de 2026](docs/images/dashboard-visao-geral-dark.png)
+
+O dashboard foi validado visualmente no **Power BI Desktop** pelo responsável pelo projeto. A página **Visão Geral** reúne indicadores de execução da despesa, rankings por órgão e programa e filtros por órgão, programa e grupo de despesa, com acesso aos valores exatos no detalhe.
+
 ## Resultados validados
 
 | Verificação | Resultado |
@@ -15,7 +21,7 @@ O recorte inicial é **janeiro de 2026**. Os rankings abrangem os órgãos prese
 | Diferença: soma dos programas − total pago | **R$ 0,00** |
 | Pagamentos de restos a pagar, separados | R$ 147.955.708.343,19 |
 
-Consulte [as consultas e resultados completos](RESULTADOS_JANEIRO_2026.md). O Total Pago também foi validado pelo responsável pelo projeto no Desktop antes do refinamento visual. A versão escura ainda precisa de conferência de renderização e interações no aplicativo.
+Consulte [as consultas e resultados completos](RESULTADOS_JANEIRO_2026.md). O Total Pago foi conferido no Power BI Desktop e corresponde ao resultado reconciliado em SQL.
 
 ## Fonte e tecnologias
 
@@ -24,7 +30,7 @@ Fonte declarada: [Portal da Transparência — Despesas: Execução](https://por
 - **Python:** inspeção, leitura em lotes, exportação e verificações.
 - **SQL e DuckDB:** staging, transformações e consultas analíticas com precisão decimal.
 - **Power BI:** Power Query, modelo TMDL, medidas DAX e relatório PBIR.
-- **Git:** versionamento posterior de código, documentação e definições do projeto, após revisão.
+- **Git:** versionamento de código, documentação e definições do projeto, com repositório publicado no GitHub.
 
 Os scripts não fazem downloads. Dados, banco, cache e ambiente virtual não são distribuídos pelo repositório.
 
@@ -43,7 +49,7 @@ sql/                         # Transformações e consultas de validação
   powerbi/                   # Projeção principal e agregações alternativas
 tests/                       # Dados fictícios, integridade e contratos PBIR
 docs/                        # Arquitetura, metodologia e publicação
-  imagens/                   # Capturas reais futuras
+  images/                    # Captura do dashboard validado no Desktop
 data/                        # Conteúdo local ignorado pelo Git
   raw/                       # ZIP original
   processed/                 # CSVs, candidatos PBIR e backups
@@ -64,7 +70,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-Esses são comandos para reprodução; nenhuma biblioteca foi baixada nesta etapa. Disponibilize o ZIP correspondente ao período em `data/raw/` e execute:
+Disponibilize o ZIP correspondente ao período em `data/raw/` e execute:
 
 ```powershell
 .\.venv\Scripts\python.exe -X utf8 src\inspect_data.py data\raw\202601_Despesas.zip
@@ -101,7 +107,7 @@ O banco é criado em `data/brasil_em_dados.duckdb`. A carga transacional substit
 
 A página de validação foi preservada. **Visão Geral** contém quatro cartões, dois gráficos, três filtros e detalhe em reais exatos. Programas usam códigos textuais para não juntar códigos de nomes iguais. O auxiliar dos programas 0905–0908 não substitui grupo de despesa nem classifica todo o programa 0909 como dívida.
 
-Cartões e eixos usam unidades automáticas nativas; rótulos das barras e detalhe mantêm reais exatos. As medidas não dividem valores nem perdem centavos. Confira os sufixos de milhões/bilhões e as interações no Desktop. Veja o [guia de importação](powerbi/GUIA_POWER_BI.md) e o [relatório do refinamento](docs/REFINAMENTO.md).
+Cartões e eixos usam unidades automáticas nativas; rótulos das barras e detalhe mantêm reais exatos. As medidas não dividem valores nem perdem centavos. Ao atualizar os dados ou o layout, confira novamente as unidades e as interações no Desktop. Veja o [guia de importação](powerbi/GUIA_POWER_BI.md) e o [relatório do refinamento](docs/REFINAMENTO.md).
 
 ## Testes e validações
 
@@ -113,9 +119,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File src\validate_tmdl.ps1
 
 Os validadores usam recursos já instalados com o Power BI, sem rede. A opção ExecutionPolicy vale apenas para o processo, sem alterar política persistente. Para extrair os esquemas locais, consulte [docs/REFINAMENTO.md](docs/REFINAMENTO.md).
 
-A suíte cobre conversões, NULL/zero, códigos, negativos, rollback, reexecução, reconciliação, releitura dos CSVs, referências PBIR, interações configuradas, contraste e cópia sem caminho pessoal. O resultado atualizado está no relatório do refinamento.
+A suíte cobre conversões, NULL/zero, códigos, negativos, rollback, reexecução, reconciliação, releitura dos CSVs, referências PBIR, interações configuradas, contraste e cópia sem caminho pessoal. A última execução na cópia de publicação teve **32 testes aprovados**.
 
-**Testes locais não substituem renderização e seleção no Desktop.** Nenhuma medida foi alterada para mascarar resultados em branco.
+A validação combina testes automatizados, reconciliação em SQL e conferência visual no Power BI Desktop. Alterações futuras devem ser verificadas novamente no aplicativo.
 
 ## Limitações e atualização
 
@@ -123,26 +129,12 @@ A suíte cobre conversões, NULL/zero, códigos, negativos, rollback, reexecuç�
 - Negativos e nomes aparentemente truncados foram preservados; sua causa não foi inferida.
 - Os totais incluem dívida pública, não apenas gastos em serviços públicos.
 - Classificações não comprovam causas econômicas/políticas, eficácia, irregularidade ou beneficiário final.
-- O snapshot é mensal, sem série temporal. O comportamento de cartões em branco não foi reproduzido no Desktop nesta etapa.
+- O snapshot é mensal, sem série temporal.
 
 Para reprocessar o mesmo snapshot, repita testes, carga e exportação e atualize o PBIP. Para outro mês, revise a restrição em Python, datas das consultas, título estático e documentação. Não renomeie outro período para contornar validações. Vários meses exigem chave de origem e estratégia incremental antes de anexar registros.
 
-## Preparação para publicação
+## Reprodução e segurança
 
-A fonte M local conserva um caminho pessoal. **Não execute `git add .` diretamente nesta pasta antes de tratar esse caminho.** Prepare uma cópia revisável sem mudar o projeto de trabalho:
+O repositório disponibiliza código, documentação e definições PBIP/PBIR/TMDL. Dados brutos, CSVs, banco DuckDB, credenciais, caches e ambientes virtuais permanecem excluídos pelo `.gitignore`.
 
-```powershell
-.\.venv\Scripts\python.exe -X utf8 src\prepare_publication.py --prepare
-```
-
-Revise `data/processed/publicacao_<data_hora>/` e siga [docs/PUBLICACAO.md](docs/PUBLICACAO.md). A ferramenta não executa Git, commits ou publicação. Sua auditoria heurística não dispensa revisão humana.
-
-## Imagens do dashboard
-
-Espaço reservado para **capturas reais** depois da conferência no Desktop:
-
-- Visão Geral sem filtros, com período e unidades legíveis.
-- Filtros combinados e detalhe em reais exatos.
-- Página de validação com o total reconciliado.
-
-Salve as capturas revisadas em `docs/imagens/` e acrescente seus links aqui. Nenhuma imagem fictícia foi incluída.
+A fonte do Power BI usa um marcador de caminho configurável. Para reproduzir o painel, siga a seção **Abrir e configurar o PBIP** e informe o caminho do seu CSV local. Antes de compartilhar alterações, revise os arquivos preparados no Git para evitar a inclusão de dados locais ou informações pessoais.
