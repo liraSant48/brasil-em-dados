@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file:; style-src 'self' file:; script-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Brasil em Dados: análise das despesas federais de janeiro a agosto de 2026, com Python, SQL, DuckDB e Power BI.">
+  <meta name="color-scheme" content="dark">
+  <title>Brasil em Dados | Gastos Públicos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="topbar wrap">
+  <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">▥</span> Brasil em Dados</a>
+  <nav aria-label="Navegação principal"><a href="#sobre">Projeto</a><a href="#dashboard">Dashboard</a><a href="#validacoes">Validações</a></nav>
+</header>
+<main id="conteudo">
+  <section class="hero wrap" id="inicio" aria-labelledby="titulo">
+    <div class="hero-copy">
+      <p class="eyebrow">PORTFÓLIO · ANÁLISE DE DADOS</p>
+      <h1 id="titulo">Brasil em Dados <span>| Gastos Públicos</span></h1>
+      <p class="lead">Dos arquivos públicos à análise interativa da despesa federal.</p>
+      <p>Transformei dados do Portal da Transparência em uma base organizada e um dashboard para explorar pagamentos, órgãos e programas ao longo de oito meses.</p>
+      <div class="actions"><a class="button" href="https://github.com/liraSant48/brasil-em-dados">Ver projeto no GitHub <span aria-hidden="true">↗</span></a><a class="text-link" href="#dashboard">Explorar as páginas ↓</a></div>
+      <!-- Futuro botão: inserir aqui um link HTTPS validado para "Abrir dashboard interativo" quando houver uma publicação autorizada. -->
+      <p class="period">JANEIRO — AGOSTO / 2026</p>
+    </div>
+    <aside class="hero-note" aria-label="Resumo do recorte">
+      <span class="eyebrow">A BASE EM PERSPECTIVA</span><strong>495.572</strong><span>registros no consolidado</span>
+      <div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p>Oito meses. Uma base para cruzar período, órgão, programa e ação.</p><small>Elemento gráfico ilustrativo, sem escala de valores.</small>
+    </aside>
+  </section>
+  <section class="section wrap about" id="sobre" aria-labelledby="sobre-titulo">
+    <div><p class="eyebrow">01 / PONTO DE PARTIDA</p><h2 id="sobre-titulo">Sobre o projeto</h2></div>
+    <div><p>Tive a ideia deste projeto para aplicar meus conhecimentos em SQL e análise de dados. Também usei Python, DuckDB e Power BI para organizar as informações e construir o painel.</p><p>Preferi trabalhar com dados públicos reais em vez de dados fictícios. Escolhi os arquivos de despesas federais do <a href="https://portaldatransparencia.gov.br/download-de-dados/despesas-execucao">Portal da Transparência</a>, desde a leitura dos ZIPs até a conferência dos resultados.</p></div>
+  </section>
+  <section class="section wrap" aria-labelledby="evolucao-titulo">
+    <p class="eyebrow">02 / DESENVOLVIMENTO</p><h2 id="evolucao-titulo">Como o projeto evoluiu</h2>
+    <ol class="timeline">
+      <li><span class="step">01</span><h3>Começar com janeiro</h3><p>Usei os <strong>48.519 registros</strong> de janeiro de 2026 para entender o arquivo, tratar os campos, criar consultas e montar a primeira versão do dashboard.</p></li>
+      <li><span class="step">02</span><h3>Conferir o processamento</h3><p>Testei a carga, as medidas financeiras e as agregações. As reconciliações da etapa inicial apresentaram diferença de <strong>R$ 0,00</strong>.</p></li>
+      <li><span class="step">03</span><h3>Ampliar o período</h3><p>Depois das validações, expandi a análise até agosto de 2026: <strong>495.572 registros</strong>, evolução mensal e comparação entre períodos.</p></li>
+    </ol>
+    <p class="principle">Validar primeiro em uma base menor. Só então ampliar o processamento.</p>
+  </section>
+  <section class="section wrap" aria-labelledby="indicadores-titulo">
+    <p class="eyebrow">03 / JANEIRO A AGOSTO DE 2026</p><h2 id="indicadores-titulo">Indicadores principais</h2>
+    <dl class="metrics"><div><dt>Registros</dt><dd>495.572</dd></div><div><dt>Empenhados</dt><dd>R$ 4,86 <small>tri</small></dd></div><div><dt>Liquidados</dt><dd>R$ 3,95 <small>tri</small></dd></div><div><dt>Pagos do exercício</dt><dd>R$ 3,85 <small>tri</small></dd></div><div><dt>Restos a pagar pagos</dt><dd>R$ 230,51 <small>bi</small></dd></div></dl>
+    <p class="note">Valores arredondados para apresentação. Empenho, liquidação e pagamento são etapas distintas e não devem ser somados entre si. Restos a pagar pagos permanecem separados. A base mantém centavos e valores negativos.</p>
+  </section>
+  <section class="section wrap" id="dashboard" aria-labelledby="dashboard-titulo">
+    <p class="eyebrow">04 / O PAINEL</p><h2 id="dashboard-titulo">Dashboard</h2><p class="section-intro">Três perspectivas sobre a mesma base. As imagens abaixo são capturas estáticas; os filtros e as interações estão disponíveis no projeto Power BI.</p>
+    <article class="dashboard-panel"><div class="panel-copy"><span class="step">01</span><h3>Visão Geral</h3><p>Indicadores financeiros, rankings por órgão e programa e evolução mensal do valor pago. Uma visão da composição dos pagamentos no período selecionado.</p><a href="images/visao-geral.png">Abrir imagem no tamanho original ↗</a></div><figure><img src="images/visao-geral.png" width="655" height="686" alt="Visão Geral: cartões financeiros, rankings de órgãos e programas, evolução do valor pago e tabela de registros." loading="lazy" decoding="async"></figure></article>
+    <article class="dashboard-panel"><div class="panel-copy"><span class="step">02</span><h3>Evolução Mensal</h3><p>Pagamentos, empenhos, liquidações e restos a pagar ao longo dos meses. Inclui mês anterior, variação mensal e matrizes de órgãos e programas.</p><a href="images/evolucao-mensal.png">Abrir imagem no tamanho original ↗</a></div><figure><img src="images/evolucao-mensal.png" width="655" height="686" alt="Evolução Mensal: indicadores de comparação, quatro gráficos mensais e matrizes por órgão e programa." loading="lazy" decoding="async"></figure></article>
+    <article class="dashboard-panel"><div class="panel-copy"><span class="step">03</span><h3>Detalhamento</h3><p>Navegação pela hierarquia de órgão, função, programa e ação, com acesso às classificações e aos valores completos dos registros.</p><a href="images/detalhamento.png">Abrir imagem no tamanho original ↗</a></div><figure><img src="images/detalhamento.png" width="655" height="687" alt="Detalhamento: filtros, matriz da classificação orçamentária e tabela de registros com valores completos." loading="lazy" decoding="async"></figure></article>
+  </section>
+  <section class="section wrap" aria-labelledby="tecnologias-titulo"><p class="eyebrow">05 / FERRAMENTAS</p><h2 id="tecnologias-titulo">Tecnologias utilizadas</h2><ul class="tech"><li>Python</li><li>SQL</li><li>DuckDB</li><li>Power BI</li><li>Git/GitHub</li></ul>
+    <h3 class="pipeline-title">Pipeline do projeto</h3><ol class="pipeline"><li>Dados brutos</li><li>Python</li><li>DuckDB / SQL</li><li>CSV analítico</li><li>Power BI</li></ol><p class="note">Leitura dos arquivos, tratamento, consultas e exportação da base analítica. Códigos são preservados como texto e valores monetários são tratados com precisão decimal.</p>
+  </section>
+  <section class="section wrap validation" id="validacoes" aria-labelledby="validacoes-titulo"><div><p class="eyebrow">06 / CONFERÊNCIA</p><h2 id="validacoes-titulo">Validações</h2><p>Antes de ampliar o período, conferi o carregamento, as medidas e as agregações com testes automatizados e reconciliações. Em janeiro, a soma dos programas correspondeu ao total pago, com diferença de <strong>R$ 0,00</strong>.</p><p>A expansão para oito meses incluiu a conferência do consolidado e do modelo multimensal no Power BI Desktop. Os gráficos principais e o funcionamento do painel foram verificados no aplicativo.</p></div><aside class="callout"><h3>O que essas verificações significam</h3><p>São validações do processamento e da consistência interna do projeto. Não constituem auditoria da veracidade dos dados nem comprovam a cobertura de toda a execução federal.</p><p>Os totais incluem programas de dívida pública. A classificação orçamentária não explica, sozinha, causas econômicas ou políticas dos gastos.</p><a href="https://github.com/liraSant48/brasil-em-dados#readme">Consultar metodologia e limites de reprodução ↗</a></aside></section>
+</main>
+<footer class="wrap footer"><div><strong>Brasil em Dados | Gastos Públicos</strong><p>Dados públicos do Portal da Transparência · Janeiro a agosto de 2026</p></div><a href="https://github.com/liraSant48/brasil-em-dados">Projeto no GitHub ↗</a></footer>
+</body>
+</html>
