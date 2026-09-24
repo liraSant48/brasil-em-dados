@@ -1,5 +1,8 @@
 # Brasil em Dados | Gastos Públicos
 
+🌐 **[Ver projeto online](https://lirasant48.github.io/brasil-em-dados/)**\
+💻 **[Ver repositório no GitHub](https://github.com/liraSant48/brasil-em-dados)**
+
 Tive a ideia do Brasil em Dados para colocar em prática meus conhecimentos em SQL e análise de dados. Queria trabalhar com uma base pública real, em vez de dados fictícios, e escolhi os arquivos de gastos públicos federais disponibilizados pelo Portal da Transparência. Durante o desenvolvimento, também utilizei Python, DuckDB e Power BI para transformar esses arquivos em uma análise interativa.
 
 Comecei pelo arquivo de janeiro de 2026, com **48.519 registros**. A intenção era trabalhar primeiro com uma base menor: entender a estrutura dos dados, tratar e organizar as informações, escrever as consultas, conferir os valores e construir a primeira versão do dashboard.
