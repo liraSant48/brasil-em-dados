@@ -16,6 +16,7 @@ EXPORTS = {
     'despesas_por_orgao': '02_por_orgao.sql',
     'despesas_por_programa': '03_por_programa.sql',
     'despesas_por_acao': '04_por_acao.sql',
+    'despesas_por_mes': '05_por_mes.sql',
 }
 MEASURES = {
     'valor_empenhado': 'Valor Empenhado (R$)',

@@ -30,8 +30,10 @@ def quote(name):
     return '"' + name.replace('"', '""') + '"'
 
 
-def load_data(path, database, member=None, batch_size=5000):
-    """Substitui somente o snapshot 2026/01; rollback mantém carga anterior íntegra."""
+def load_data(path, database, member=None, batch_size=5000, period='2026/01'):
+    """Valida um único mês; o carregador incremental usa um banco temporário."""
+    if not re.fullmatch(r'[0-9]{4}/(0[1-9]|1[0-2])', period):
+        raise ValueError('Período esperado no formato AAAA/MM.')
     path, database = Path(path), Path(database)
     if not path.is_file():
         raise ValueError(f"ZIP local não encontrado: {path}")
@@ -56,6 +58,8 @@ def load_data(path, database, member=None, batch_size=5000):
                 raise ValueError(f"Cabeçalho incompatível: esperadas 47 colunas únicas. Ausentes: {missing}; extras: {extra}")
             database.parent.mkdir(parents=True, exist_ok=True)
             with duckdb.connect(str(database)) as con:
+                if con.execute("SELECT count(*) FROM information_schema.tables WHERE table_name='incremental_control'").fetchone()[0]:
+                    raise ValueError('Banco incremental: use load_months.py; substituição integral bloqueada.')
                 con.execute("BEGIN TRANSACTION")
                 try:
                     definitions = ', '.join(f'{quote(name)} VARCHAR NOT NULL' for name in header)
@@ -80,8 +84,8 @@ def load_data(path, database, member=None, batch_size=5000):
                     for total, row in enumerate(reader, start=1):
                         if len(row) != len(header):
                             raise ValueError(f"Registro {total}: esperadas 47 colunas, recebidas {len(row)}.")
-                        if row[period_index] != "2026/01":
-                            raise ValueError(f"Registro {total}: período diferente de 2026/01: {row[period_index]!r}")
+                        if row[period_index] != period:
+                            raise ValueError(f"Registro {total}: período diferente de {period}: {row[period_index]!r}")
                         for name in MONEY_COLUMNS:
                             value = row[header.index(name)].strip()
                             if not value:
@@ -124,7 +128,7 @@ def load_data(path, database, member=None, batch_size=5000):
                         colunas INTEGER, registros BIGINT, carregado_em TIMESTAMPTZ,
                         duckdb_version VARCHAR)''')
                     con.execute('INSERT INTO carga_metadata VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp, ?)',
-                                [SOURCE, path.name, entry.filename, digest, '2026/01', 'cp1252', ';', len(header), total, duckdb.__version__])
+                                [SOURCE, path.name, entry.filename, digest, period, 'cp1252', ';', len(header), total, duckdb.__version__])
                     con.execute('COMMIT')
                 except Exception:
                     con.execute('ROLLBACK')
