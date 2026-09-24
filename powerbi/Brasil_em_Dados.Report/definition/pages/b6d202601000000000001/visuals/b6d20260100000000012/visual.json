@@ -3,9 +3,9 @@
   "name": "b6d20260100000000012",
   "position": {
     "x": 32,
-    "y": 942,
+    "y": 1220,
     "width": 1536,
-    "height": 416,
+    "height": 400,
     "z": 12,
     "tabOrder": 12
   },
@@ -152,7 +152,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "14D"
                 }
               }
             },
@@ -193,6 +193,21 @@
               "queryRef": "despesas_bi.id_registro",
               "nativeQueryRef": "id_registro",
               "displayName": "Registro"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "despesas_bi"
+                    }
+                  },
+                  "Property": "periodo"
+                }
+              },
+              "queryRef": "despesas_bi.periodo",
+              "nativeQueryRef": "periodo",
+              "displayName": "Período"
             },
             {
               "field": {
@@ -397,14 +412,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "11D"
                 }
               }
             },
             "wordWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
@@ -461,7 +476,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "11D"
                 }
               }
             }

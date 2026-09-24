@@ -3,9 +3,9 @@
   "name": "b6d20260100000000009",
   "position": {
     "x": 32,
-    "y": 430,
+    "y": 432,
     "z": 9,
-    "height": 488,
+    "height": 430,
     "width": 756,
     "tabOrder": 9
   },
@@ -32,7 +32,7 @@
             }
           ]
         },
-        "Y": {
+        "Tooltips": {
           "projections": [
             {
               "field": {
@@ -47,11 +47,12 @@
               },
               "queryRef": "despesas_bi.Total Pago",
               "nativeQueryRef": "Total Pago",
+              "displayName": "Valor pago exato",
               "format": "\"R$\" #,0.00;-\"R$\" #,0.00;\"R$\" #,0.00"
             }
           ]
         },
-        "Tooltips": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -142,7 +143,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "11D"
                 }
               }
             },
@@ -194,7 +195,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "11D"
                 }
               }
             },
@@ -268,7 +269,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "11D"
                 }
               }
             },
@@ -452,7 +453,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Valor pago por órgão superior'"
+                  "Value": "'Ranking por órgão'"
                 }
               }
             },
@@ -470,7 +471,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "14D"
                 }
               }
             },
@@ -485,6 +486,19 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

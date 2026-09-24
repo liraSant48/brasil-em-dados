@@ -2,15 +2,38 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "b6d20260100000000001",
   "position": {
-    "x": 32,
-    "y": 24,
-    "width": 1536,
-    "height": 102,
+    "x": 31.846259437199723,
+    "y": 10.981468771448181,
     "z": 1,
+    "height": 72.47769389155799,
+    "width": 1543.9945092656142,
     "tabOrder": 1
   },
   "visual": {
     "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Brasil em Dados | Gastos Públicos",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "27pt",
+                      "color": "#f3f4f6"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "background": [
         {
@@ -18,7 +41,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -146,42 +169,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
-    "objects": {
-      "general": [
-        {
-          "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "Brasil em Dados | Gastos Públicos",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "27pt",
-                      "fontWeight": "bold",
-                      "color": "#F3F4F6"
-                    }
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Execução da despesa federal — Janeiro de 2026",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "14pt",
-                      "fontWeight": "normal",
-                      "color": "#AAB2BF"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    }
+    "drillFilterOtherVisuals": true
   }
 }

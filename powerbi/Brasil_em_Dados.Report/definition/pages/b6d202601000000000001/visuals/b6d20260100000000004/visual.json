@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "b6d20260100000000004",
   "position": {
-    "x": 1072,
-    "y": 146,
-    "z": 4,
-    "height": 96,
-    "width": 496,
-    "tabOrder": 4
+    "x": 1202,
+    "y": 154,
+    "z": 104,
+    "height": 90,
+    "width": 366,
+    "tabOrder": 104
   },
   "visual": {
     "visualType": "slicer",
@@ -28,10 +28,29 @@
               },
               "queryRef": "despesas_bi.nome_grupo_despesa",
               "nativeQueryRef": "nome_grupo_despesa",
-              "active": true
+              "active": true,
+              "displayName": "nome_grupo_despesa"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "despesas_bi"
+                  }
+                },
+                "Property": "nome_grupo_despesa"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -136,6 +155,11 @@
               }
             }
           }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
         }
       ],
       "dropdown": [

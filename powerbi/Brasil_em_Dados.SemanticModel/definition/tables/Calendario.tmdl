@@ -1,0 +1,64 @@
+table Calendario
+	lineageTag: c42aa4bf-79cd-5578-a1c6-1c5a75a5fd3c
+	dataCategory: Time
+
+	column Data
+		dataType: dateTime
+		isKey
+		formatString: dd/MM/yyyy
+		lineageTag: 62ce641b-8336-520f-9459-8527aa0aa474
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano = YEAR([Data])
+		dataType: int64
+		lineageTag: a08d44c2-1a29-5877-813d-1eff1d2a6e39
+		summarizeBy: none
+
+	column NumeroMes = MONTH([Data])
+		dataType: int64
+		lineageTag: abe3a9c3-0225-5874-a581-4e59142fefd5
+		summarizeBy: none
+
+	column NomeMes = FORMAT([Data], "mmmm", "pt-BR")
+		dataType: string
+		lineageTag: 05d656ce-b6e6-517c-b1ad-17ae368cfae3
+		summarizeBy: none
+		sortByColumn: NumeroMes
+
+	column InicioMes = DATE(YEAR([Data]), MONTH([Data]), 1)
+		dataType: dateTime
+		formatString: dd/MM/yyyy
+		lineageTag: 76c3e922-fda4-533e-af08-3abe2c786d21
+		summarizeBy: none
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OrdemMes = YEAR([Data]) * 100 + MONTH([Data])
+		dataType: int64
+		lineageTag: 9eed67fa-371e-59cd-bcc0-b39377bf1eaf
+		summarizeBy: none
+
+	column MesAno = FORMAT([Data], "mmm/yyyy", "pt-BR")
+		dataType: string
+		lineageTag: 959efece-3e2f-543b-b2ac-44079485c308
+		summarizeBy: none
+		sortByColumn: OrdemMes
+
+	hierarchy 'Ano e mês'
+		lineageTag: b1529e57-b45b-4de0-9700-d2029c3d3635
+
+		level Ano
+			lineageTag: b96cc0bc-4c43-4a7c-87de-be2d73407181
+			column: Ano
+
+		level Mês
+			lineageTag: b435e81d-1e74-4a7f-a252-267b91da4492
+			column: MesAno
+
+	partition Calendario = calculated
+		mode: import
+		source = CALENDAR(MIN('despesas_bi'[periodo]), EOMONTH(MAX('despesas_bi'[periodo]), 0))
+

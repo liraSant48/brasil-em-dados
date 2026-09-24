@@ -3,14 +3,31 @@
   "name": "b6d20260100000000011",
   "position": {
     "x": 32,
-    "y": 1382,
-    "width": 1536,
-    "height": 34,
+    "y": 1644,
     "z": 11,
+    "height": 32,
+    "width": 1536,
     "tabOrder": 11
   },
   "visual": {
     "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "background": [
         {
@@ -146,29 +163,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
-    "objects": {
-      "general": [
-        {
-          "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "Janeiro de 2026 • Cartões e eixos com unidades automáticas. Rótulos e detalhe em R$ exatos. Restos pagos separados.",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI",
-                      "fontSize": "11pt",
-                      "fontWeight": "normal",
-                      "color": "#AAB2BF"
-                    }
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      ]
-    }
+    "drillFilterOtherVisuals": true
   }
 }

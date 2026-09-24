@@ -1,1 +1,549 @@
 cultureInfo pt-BR
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "despesas_bi.total_pago": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Total Pago"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Valor pago exato": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Total Pago": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.id_registro": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "id_registro"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Registro": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.codigo_programa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "codigo_programa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "codigo_programa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Código do programa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.nome_programa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "nome_programa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Programa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.codigo_acao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "codigo_acao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Código da ação": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.nome_orgao_superior": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "nome_orgao_superior"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome_orgao_superior": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Órgão superior": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Órgão": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.nome_grupo_despesa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "nome_grupo_despesa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nome_grupo_despesa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Grupo de despesa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.total_empenhado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Total Empenhado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Empenhado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.total_liquidado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Total Liquidado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Liquidado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.restos_a_pagar_pagos": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Restos a Pagar Pagos"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Restos a Pagar Pagos": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.subtítulo_do_período": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Subtítulo do Período"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Subtítulo do Período": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.total_pago_mês_anterior": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Total Pago Mês Anterior"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "despesas_bi.variação_mensal_pago_r": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Variação Mensal Pago R$"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "despesas_bi.variação_mensal_pago_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Variação Mensal Pago %"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "despesas_bi.orgao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Orgao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Órgão": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.programa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Programa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Programa": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.funcao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Funcao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Função": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.acao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "Acao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ação": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.codigo_orgao_superior": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "codigo_orgao_superior"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Código do órgão": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.codigo_funcao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "codigo_funcao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Código da função": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.nome_funcao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "nome_funcao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Função": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.nome_acao": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "nome_acao"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ação": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "despesas_bi.codigo_grupo_despesa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "despesas_bi",
+			          "ConceptualProperty": "codigo_grupo_despesa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Código do grupo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calendario.mesano": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendario",
+			          "ConceptualProperty": "MesAno"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Mês/ano": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json

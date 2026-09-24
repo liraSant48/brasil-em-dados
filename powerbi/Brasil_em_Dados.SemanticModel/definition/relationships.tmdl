@@ -1,4 +1,4 @@
-relationship b31176e0-00cd-467e-93bc-362da9ea3b6e
+relationship 258c0c61-f97e-4cd3-bf44-f1cdeae3bf01
 	joinOnDateBehavior: datePartOnly
 	fromColumn: despesas_bi.periodo
-	toColumn: LocalDateTable_08100f4b-8856-4038-ab2b-179a495e058a.Date
+	toColumn: Calendario.Data

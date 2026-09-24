@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "b6d20260100000000002",
   "position": {
-    "x": 32,
-    "y": 146,
-    "z": 2,
-    "height": 96,
-    "width": 496,
-    "tabOrder": 2
+    "x": 422,
+    "y": 154,
+    "z": 102,
+    "height": 90,
+    "width": 366,
+    "tabOrder": 102
   },
   "visual": {
     "visualType": "slicer",
@@ -28,10 +28,29 @@
               },
               "queryRef": "despesas_bi.nome_orgao_superior",
               "nativeQueryRef": "nome_orgao_superior",
-              "active": true
+              "active": true,
+              "displayName": "nome_orgao_superior"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "despesas_bi"
+                  }
+                },
+                "Property": "nome_orgao_superior"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
